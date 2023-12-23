@@ -1,0 +1,28 @@
+<div style="background-color: beige;">
+<div id="form">
+    <div id="container">
+        <div id="header">
+            <h2>Login</h2>
+        </div>
+        <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)" style="width: 350px;">
+            <p>Enter  username</p>
+            <input style="width: 100%;height: 30px; border-radius: 10px; " type="text" required #name="ngModel" pattern="[a-zA-z]+$" name="name" placeholder="username"
+                ngModel>
+            <br>
+            <span *ngIf="name.invalid && name.touched" style="color:red">Please enter a valid input</span>
+            <br>
+            <p>Enter  email address</p>
+            <input style="width: 100%; height: 30px; border-radius: 10px;" type="email" required #email="ngModel" email name="email" placeholder="email" ngModel>
+            <br>
+            <span *ngIf="email.invalid && email.touched" style="color:red">Please enter a valid input</span><br>
+            <p>Enter Password</p>
+            <input style="width: 100%;height: 30px; border-radius: 10px;" type="password" required #password="ngModel" minlength="5" name="password"
+                placeholder="Password" ngModel>
+            <br>
+            <span *ngIf="password.invalid && password.touched" style="color:red">Please enter a valid input</span>
+            <br>
+            <button  [disabled]="loginForm.invalid" style="margin-left: 135px;margin-top: 10px; border-radius: 10px; font-size: 20px; margin-bottom:25px "><a  href="/weather">Submit</a></button>
+        </form>
+    </div>
+</div>
+</div>
